@@ -41,6 +41,11 @@
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
 
+    <div class="field">
+        <%= f.label :amount %>
+        <%= f.number_field :amount, step: 100 %>
+    </div>
+
   <div class="actions">
     <%= f.submit "Update" %>
   </div>
