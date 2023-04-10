@@ -1,0 +1,29 @@
+Build a gift coupons website: 
+
+A landing page which anyone can navigate without login 
+An organization can sign up with these fields (name, email address, address, password, password confirmation)
+Organization can manage its profile, account, add avatar
+Organization can add credit to their account (can use stripe or paypal integration)
+Once account has credit it can buy coupon of some amount ( multiple of 100 ) and send them to their employees using email
+Employees will receive coupon in their email with code
+Employee can visit to the website and redeem coupon for some products listed on website
+Employee can search products to buy
+Employee can add item on their cart and buy items for coupon amount only
+Employee can not redeem coupon once its used
+Organization can see all past distributed coupons
+Products list which can be bought from coupons
+
+Security:
+Use friendly-id for url organization id in url
+Use devise gem for authentication
+
+Must:
+First data modeling (proper use of schema, entities, associations and tables )
+Follow good practices and styles   https://github.com/airbnb/ruby
+Modularity
+Reusability
+Rspec Unit testing
+devise authentication system with your custom controllers
+User friendly-id for user
+Avoid N+1 query wherever possible
+User indexing wherever search is needed (avoid unnecessary indexes)
