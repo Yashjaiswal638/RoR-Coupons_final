@@ -1,9 +1,0 @@
-<h1>Add Amount</h1>
-
-<%= form_with model: @user do |form| %><br>
-    <div>
-        <%= form.label :amount %>
-        <%= f.number_field :amount, step: 100 %>
-    </div>
-    <%= form.submit %>
-<% end %>

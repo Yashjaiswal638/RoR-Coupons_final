@@ -1,0 +1,56 @@
+<section class="hero is-link is-small">
+  <!-- Hero head: will stick at the top -->
+  <div class="hero-head">
+    <nav class="navbar">
+      <div class="container">
+        <div class="navbar-brand">
+            <%= link_to root_path, class: "navbar-item" do %>
+                <span class="has-textweight-bold is-size-4 ml-4">Gift-Coupons</span>
+            <% end %>
+          <span class="navbar-burger" data-target="navbarMenuHeroA">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </div>
+        <div id="navbarMenuHeroA" class="navbar-menu">
+          <div class="navbar-end">
+            <span class="navbar-item">
+                <%= link_to root_path, class: "button is-success" do %>
+                    <span>Home</span>
+                <% end %>
+                <br>
+                <%= link_to root_path, class: "button is-success" do %>
+                    <span>About</span>
+                <% end %>
+                <% if !current_user %>
+                    <%= button_to "Login", new_user_session_path, class:"button is-success" %>
+                    <%= link_to "Sign Up", new_user_registration_path, class:"button is-success" %>
+                <% end %>
+                <% if current_user %>
+                    <%= button_to "Sign out", destroy_user_session_path, method: :delete, class:"button is-success" %>
+                <% end %>
+
+
+            </span>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Hero content: will be in the middle -->
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <p class="title">
+        <% if content_for(:title) %>
+            <%= yield :title %>
+        <% else %>
+            Gift-Coups
+        <% end %>
+      </p>
+    </div>
+  </div>
+
+
+</section>
