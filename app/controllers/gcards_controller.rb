@@ -1,4 +1,5 @@
 class GcardsController < ApplicationController
+  require 'securerandom'
   before_action :set_gcard, only: %i[ show edit update destroy ]
 
   # GET /gcards or /gcards.json
@@ -22,7 +23,8 @@ class GcardsController < ApplicationController
   # POST /gcards or /gcards.json
   def create
     @gcard = Gcard.new(gcard_params)
-    @gcard.code = 20.times.map { (0...(rand(10))).map { ('a'..'z').to_a[rand(26)] }.join }.join("")
+    @gcard.code = SecureRandom.alphanumeric(50)
+    @gcard.owner = current_user.email
     
     respond_to do |format|
       if @gcard.save

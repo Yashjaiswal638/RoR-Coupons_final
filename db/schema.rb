@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_12_024331) do
+ActiveRecord::Schema[7.0].define(version: 2023_04_12_053721) do
   create_table "gcards", force: :cascade do |t|
     t.string "code"
     t.integer "amount"
