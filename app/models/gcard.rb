@@ -1,0 +1,2 @@
+class Gcard < ApplicationRecord
+end

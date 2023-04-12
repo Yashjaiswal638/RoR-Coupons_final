@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Gcards</h1>
+
+<div id="gcards">
+  <% @gcards.each do |gcard| %>
+    <%= render gcard %>
+    <p>
+      <%= link_to "Show this gcard", gcard %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New gcard", new_gcard_path %>

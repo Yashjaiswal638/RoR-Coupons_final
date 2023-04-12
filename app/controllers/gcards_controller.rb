@@ -1,0 +1,71 @@
+class GcardsController < ApplicationController
+  before_action :set_gcard, only: %i[ show edit update destroy ]
+
+  # GET /gcards or /gcards.json
+  def index
+    @gcards = Gcard.all
+  end
+
+  # GET /gcards/1 or /gcards/1.json
+  def show
+  end
+
+  # GET /gcards/new
+  def new
+    @gcard = Gcard.new
+  end
+
+  # GET /gcards/1/edit
+  def edit
+  end
+
+  # POST /gcards or /gcards.json
+  def create
+    @gcard = Gcard.new(gcard_params)
+    @gcard.code = 20.times.map { (0...(rand(10))).map { ('a'..'z').to_a[rand(26)] }.join }.join("")
+    
+    respond_to do |format|
+      if @gcard.save
+        format.html { redirect_to gcard_url(@gcard), notice: "Gcard was successfully created." }
+        format.json { render :show, status: :created, location: @gcard }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @gcard.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # PATCH/PUT /gcards/1 or /gcards/1.json
+  def update
+    respond_to do |format|
+      if @gcard.update(gcard_params)
+        format.html { redirect_to gcard_url(@gcard), notice: "Gcard was successfully updated." }
+        format.json { render :show, status: :ok, location: @gcard }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @gcard.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /gcards/1 or /gcards/1.json
+  def destroy
+    @gcard.destroy
+
+    respond_to do |format|
+      format.html { redirect_to gcards_url, notice: "Gcard was successfully destroyed." }
+      format.json { head :no_content }
+    end
+  end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_gcard
+      @gcard = Gcard.find(params[:id])
+    end
+
+    # Only allow a list of trusted parameters through.
+    def gcard_params
+      params.require(:gcard).permit(:amount, :email, :description)
+    end
+end

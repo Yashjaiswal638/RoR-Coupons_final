@@ -29,6 +29,7 @@
                 <% end %>
                 <% if current_user %>
                     <%= button_to "Sign out", destroy_user_session_path, method: :delete, class:"button is-success" %>
+                    <%= link_to "Edit", edit_user_registration_path, class:"button is-success" %>
                 <% end %>
 
 
