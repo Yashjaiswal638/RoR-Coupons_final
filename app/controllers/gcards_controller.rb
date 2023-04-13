@@ -28,8 +28,22 @@ class GcardsController < ApplicationController
     
     respond_to do |format|
       if @gcard.save
-        format.html { redirect_to gcard_url(@gcard), notice: "Gcard was successfully created." }
-        format.json { render :show, status: :created, location: @gcard }
+        if current_user.amount >= @gcard.amount
+          current_user.amount = current_user.amount - @gcard.amount
+          current_user.save
+          format.html { redirect_to gcard_url(@gcard), notice: "Gcard was successfully created." }
+          format.json { render :show, status: :created, location: @gcard }
+          # flash.alert = "Article was created successfully."
+          # redirect_to @gcard
+        else
+          @gcard.destroy
+          format.html { render :new, status: :unprocessable_entity }
+          format.json { render json: @gcard.errors, status: :unprocessable_entity }
+          # flash[:notice] = "Article was created successfully."
+          # redirect_to @gcard
+
+        end
+
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @gcard.errors, status: :unprocessable_entity }
