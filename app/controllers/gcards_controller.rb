@@ -22,9 +22,9 @@ class GcardsController < ApplicationController
 
   # POST /gcards or /gcards.json
   def create
-    @gcard = Gcard.new(gcard_params)
+    @gcard = Gcard.new(gcard_params.merge!(user: current_user))
     @gcard.code = SecureRandom.alphanumeric(50)
-    @gcard.owner = current_user.email
+    # @gcard.user_id = current_user.id
     
     respond_to do |format|
       if @gcard.save

@@ -3,7 +3,7 @@
 <h1>Gcards</h1>
 
 <div id="gcards">
-  <% (@gcards.select {|i| i.owner==current_user.email}).each do |gcard| %>
+  <% (current_user.gcards).each do |gcard| %>
     <%= render gcard %>
     <p>
       <%= link_to "Show this gcard", gcard %>
