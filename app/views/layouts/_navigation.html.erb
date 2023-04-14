@@ -16,23 +16,42 @@
         <div id="navbarMenuHeroA" class="navbar-menu">
           <div class="navbar-end">
             <span class="navbar-item">
-                <%= link_to root_path, class: "button is-success" do %>
-                    <span>Home</span>
-                <% end %>
+                <div>
+                  <%= link_to root_path, class: "button is-success" do %>
+                      <span>Home</span>
+                  <% end %>
+                </div>
                 <br>
-                <%= link_to root_path, class: "button is-success" do %>
-                    <span>About</span>
-                <% end %>
-                <% if !current_user %>
-                    <%= button_to "Login", new_user_session_path, class:"button is-success" %>
-                    <%= link_to "Sign Up", new_user_registration_path, class:"button is-success" %>
-                <% end %>
-                <% if current_user %>
-                    <%= button_to "Sign out", destroy_user_session_path, method: :delete, class:"button is-success" %>
-                    <%= link_to "Edit", edit_user_registration_path, class:"button is-success" %>
-                <% end %>
+                <div>
+                  <%= link_to root_path, class: "button is-success" do %>
+                      <span>About</span>
+                  <% end %>
+                </div>
+                <div>
+                  <% if !current_user && !current_employee %>
+                      <%= button_to "Login for Org", new_user_session_path, class:"button is-success" %>
+                      <%= link_to "Sign Up for Org", new_user_registration_path, class:"button is-success" %>
+                  <% end %>
+                </div>
 
+                <div>
+                  <% if !current_employee && !current_user %>
+                      <%= button_to "Login for Emp", new_employee_session_path, class:"button is-success" %>
+                      <%= link_to "Sign Up for Emp", new_employee_registration_path, class:"button is-success" %>
+                  <% end %>
+                </div>
 
+                <div>
+                  <% if current_user %>
+                      <%= button_to "Sign out", destroy_user_session_path, method: :delete, class:"button is-success" %>
+                      <%= link_to "Edit", edit_user_registration_path, class:"button is-success" %>
+                  <% end %>
+
+                  <% if current_employee %>
+                      <%= button_to "Sign out", destroy_employee_session_path, method: :delete, class:"button is-success" %>
+                      <%= link_to "Edit", edit_employee_registration_path, class:"button is-success" %>
+                  <% end %>
+                </div>
             </span>
           </div>
         </div>
