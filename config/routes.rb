@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  devise_for :employees, controllers: {
+    sessions: 'employees/sessions',
+    registrations: 'employees/registrations'
+  }
   resources :gcards
   root 'pages#home'
   devise_for :users, controllers: {
