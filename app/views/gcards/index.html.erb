@@ -2,13 +2,26 @@
 
 <h1>Gcards</h1>
 
-<div id="gcards">
-  <% (current_user.gcards).each do |gcard| %>
-    <%= render gcard %>
-    <p>
-      <%= link_to "Show this gcard", gcard %>
-    </p>
-  <% end %>
-</div>
+<% if !!current_user %>
+  <div id="gcards">
+    <% (current_user.gcards).each do |gcard| %>
+      <%= render gcard %>
+      <p>
+        <%= link_to "Show this gcard", gcard %>
+      </p>
+    <% end %>
+  </div>
+<% end %>
+
+<% if !!current_employee %>
+  <div id="gcards">
+    <% (current_employee.gcards).each do |gcard| %>
+      <%= render gcard %>
+      <p>
+        <%= link_to "Show this gcard", gcard %>
+      </p>
+    <% end %>
+  </div>
+<% end %>
 
 <%= link_to "New gcard", new_gcard_path %>

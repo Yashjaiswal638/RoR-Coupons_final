@@ -11,6 +11,10 @@ class GcardsController < ApplicationController
   def show
   end
 
+  # Redeem Gift Card
+  def redeem
+  end
+
   # GET /gcards/new
   def new
     @gcard = Gcard.new
@@ -22,10 +26,17 @@ class GcardsController < ApplicationController
 
   # POST /gcards or /gcards.json
   def create
-    @gcard = Gcard.new(gcard_params.merge!(user: current_user))
-    @gcard.code = SecureRandom.alphanumeric(50)
+    @gcard = Gcard.new(gcard_params)
     # @gcard.user_id = current_user.id
-    
+    if !Employee.find_by(email:@gcard.email)
+      emp = Employee.create(email: @gcard.email, password:"12345678", password_confirmation:"12345678")
+      emp.save
+    else
+      emp = Employee.find_by(email:@gcard.email)
+    end
+    @gcard = Gcard.new(gcard_params.merge!(user: current_user, employee: emp))
+    @gcard.code = SecureRandom.alphanumeric(50)
+
     respond_to do |format|
       if @gcard.save
         if current_user.amount >= @gcard.amount
@@ -37,6 +48,7 @@ class GcardsController < ApplicationController
           # redirect_to @gcard
         else
           @gcard.destroy
+          Employee.last.destroy
           format.html { render :new, status: :unprocessable_entity }
           format.json { render json: @gcard.errors, status: :unprocessable_entity }
           # flash[:notice] = "Article was created successfully."
