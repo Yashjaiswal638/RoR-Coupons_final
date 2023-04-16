@@ -1,6 +1,6 @@
 class GcardsController < ApplicationController
   require 'securerandom'
-  before_action :set_gcard, only: %i[ show edit update destroy ]
+  before_action :set_gcard, only: %i[ show edit update destroy redeem ]
 
   # GET /gcards or /gcards.json
   def index
