@@ -9,4 +9,24 @@
     <%= product.price %>
   </p>
 
+    <p>
+    <strong>Sales Count:</strong>
+    <%= product.count %>
+  </p>
+
+
+  <p>
+    <%= button_to "Buy Now!!", checkout_create_path, params: {id: product.id}, remote: true %>
+  </p>
+
+  <%# <script async
+    src="https://js.stripe.com/v3/buy-button.js">
+  </script>
+
+  <stripe-buy-button
+    buy-button-id="buy_btn_1My5UiSFuVgopAlyWeMvDDb5"
+    publishable-key="pk_test_51My5PISFuVgopAlyIE8iYXHMJ6nzdaW6Upa6vXXVA7iwr07UeFPDQNvQmpjdcFzzUPWGx4VxDQvrdWDQGlCnfYw500tQwv0Xti"
+  >
+  </stripe-buy-button> %>
+
 </div>
