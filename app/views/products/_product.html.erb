@@ -9,14 +9,21 @@
     <%= product.price %>
   </p>
 
-    <p>
+  <p>
     <strong>Sales Count:</strong>
     <%= product.count %>
   </p>
 
+  <p>
+    <% if @cart.include?(product) %>
+      <%= button_to "Remove from cart", remove_from_cart_path(product), method: :delete %>
+    <% else %>
+      <%= button_to "Add to cart", add_to_cart_path(product) %>
+    <% end %>
+  </p>
 
   <p>
-    <%= button_to "Buy Now!!", checkout_create_path, params: {id: product.id}, remote: true %>
+    <%= button_to "Buy Now!!", checkout_create_path, remote: true %>
   </p>
 
   <%# <script async

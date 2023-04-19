@@ -1,9 +1,9 @@
 class CheckoutController < ApplicationController
 
     def create
-        product = Product.find(params[:id])
-        product.count += 1
-        product.save
+        # product = Product.find(params[:id])
+        # product.count += 1
+        # product.save
         # @session = Stripe::Checkout::Session.create({
         #     payment_method_types: ['card'],
         #     line_items: [{
@@ -39,7 +39,7 @@ class CheckoutController < ApplicationController
         #   )
 
         product = Stripe::Product.create({
-            name: product.name,
+            name: 'product.name',
             description: 'Comfortable cotton t-shirt',
         })
 

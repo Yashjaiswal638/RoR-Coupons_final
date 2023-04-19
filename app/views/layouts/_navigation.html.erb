@@ -56,6 +56,21 @@
                       <%= button_to "Sign out", destroy_employee_session_path, method: :delete, class:"button is-success" %>
                       <%= link_to "Edit", edit_employee_registration_path, class:"button is-success" %>
                   <% end %>
+
+                  <% if current_employee %>
+                  <hr>
+                    <h1>Cart</h1>
+                    <% @cart.each do |product| %>
+                      <%= product.name %>
+                    <% end %>
+                    <% if @cart.present? %>
+                      <p>
+                        <%= button_to "Buy Now!!", checkout_create_path, remote: true %>
+                      </p>
+                    <% end %>    
+                  <hr>                
+                  <% end %>
+
                 </div>
             </span>
           </div>

@@ -19,8 +19,14 @@ Rails.application.routes.draw do
   }
 
   post "checkout/create", to: "checkout#create"
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
+  post "products/add_to_cart/:id", to: "products#add_to_cart", as: "add_to_cart"
+  
+  delete "products/remove_from_cart/:id", to: "products#remove_from_cart", as: "remove_from_cart"
+
+
+  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  
   # Defines the root path route ("/")
   # root "articles#index"
 end

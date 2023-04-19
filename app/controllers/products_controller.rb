@@ -1,5 +1,8 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show edit update destroy ]
+  before_action :authenticate_employee!
+  before_action :initialize_session
+  before_action :load_cart
 
   # GET /products or /products.json
   def index
@@ -56,6 +59,20 @@ class ProductsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  
+  def add_to_cart
+    id = params[:id].to_i
+    session[:cart] << id unless session[:cart].include?(id)
+    redirect_to products_path
+  end
+
+  def remove_from_cart
+    id = params[:id].to_i
+    session[:cart].delete(id)
+    redirect_to products_path
+  end
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
