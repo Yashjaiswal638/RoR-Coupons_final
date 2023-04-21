@@ -1,5 +1,4 @@
-<section class="hero is-link is-small">
-  <!-- Hero head: will stick at the top -->
+<!-- <section class="hero is-link is-small">
   <div class="hero-head">
     <nav class="navbar">
       <div class="container">
@@ -22,8 +21,8 @@
                   <% end %>
                 </div>
                 <div>
-                  <%= link_to products_path, class: "button is-success" do %>
-                      <span>Shop</span>
+                  <%= link_to products_path do %>
+                      Shop
                   <% end %>
                 </div>
                 </br>
@@ -36,6 +35,12 @@
                   <% if !current_user && !current_employee %>
                       <%= button_to "Login for Org", new_user_session_path, class:"button is-success" %>
                       <%= link_to "Sign Up for Org", new_user_registration_path, class:"button is-success" %>
+                  <% end %>
+                </div>
+
+                <div>
+                  <% if current_user or current_employee %>
+                      <%= link_to "Gift-Card", gcards_path %>
                   <% end %>
                 </div>
 
@@ -57,19 +62,7 @@
                       <%= link_to "Edit", edit_employee_registration_path, class:"button is-success" %>
                   <% end %>
 
-                  <% if current_employee %>
-                  <hr>
-                    <h1>Cart</h1>
-                    <% @cart.each do |product| %>
-                      <%= product.name %>
-                    <% end %>
-                    <% if @cart.present? %>
-                      <p>
-                        <%= button_to "Buy Now!!", checkout_create_path, remote: true %>
-                      </p>
-                    <% end %>    
-                  <hr>                
-                  <% end %>
+
 
                 </div>
             </span>
@@ -79,18 +72,101 @@
     </nav>
   </div>
 
-  <!-- Hero content: will be in the middle -->
-  <div class="hero-body">
-    <div class="container has-text-centered">
-      <p class="title">
-        <% if content_for(:title) %>
-            <%= yield :title %>
-        <% else %>
-            Gift-Coups
-        <% end %>
-      </p>
-    </div>
+
+
+</section> -->
+
+
+
+<nav class="navbar" role="navigation" aria-label="main navigation" style="background-color:#C4F3E6">
+  <div class="navbar-brand">
+    <a class="navbar-item">
+            <%= link_to root_path, class: "navbar-item" do %>
+                <span class="has-textweight-bold is-size-4 ml-4">Gift-Coupons</span>
+            <% end %>
+    </a>
+
+    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
   </div>
 
+  <div id="navbarBasicExample" class="navbar-menu">
+    <div class="navbar-start">
+      <a class="navbar-item">
+                  <%= link_to root_path do %>
+                      Home
+                  <% end %>      
+      </a>
 
-</section>
+      <a class="navbar-item">
+                  <%= link_to products_path do %>
+                      Shop
+                  <% end %>        
+      </a>
+
+      <a class="navbar-item">
+                  <% if current_user or current_employee %>
+                      <%= link_to "Gift-Card", gcards_path %>
+                  <% end %>      
+      </a>
+
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            Sign Up/Log In
+          </a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item">
+                    <% if !current_employee && !current_user %>
+                        <%= link_to "Login for Emp", new_employee_session_path, class:"button is-light" %>
+                    <% end %>            
+            </a>
+
+            <a class="navbar-item">
+                    <% if !current_user && !current_employee %>
+                        <%= link_to "Sign Up for Org", new_user_registration_path, class:"button is-primary" %>
+                    <% end %>
+            </a>
+
+            <a class="navbar-item">
+                    <% if !current_user && !current_employee %>
+                        <%= link_to "Login for Org", new_user_session_path, class:"button is-light" %>
+                    <% end %>            
+            </a>
+
+            <% if current_user %>
+              <a class="navbar-item">
+                      <%= button_to "Sign out", destroy_user_session_path, method: :delete, class:"button is-primary" %>
+              </a>
+
+              <a class="navbar-item">
+                      <%= link_to "Edit profile", edit_user_registration_path, class:"button is-light" %>
+              </a>
+
+            <% end %>
+
+            <% if current_employee %>
+              <a class="navbar-item">
+                      <%= button_to "Sign out", destroy_employee_session_path, method: :delete, class:"button is-primary" %>
+              </a>
+
+              <a class="navbar-item">
+                      <%= link_to "Edit profile", edit_employee_registration_path, class:"button is-light" %>
+              </a>
+
+            <% end %>
+
+            <hr class="navbar-divider">
+            <a class="navbar-item">
+              Report an issue
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</nav>

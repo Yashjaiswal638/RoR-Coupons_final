@@ -13,10 +13,35 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <%# <style>
+      outPopUp {
+        position: absolute;
+        width: 300px;
+        height: 200px;
+        z-index: 15;
+        top: 50%;
+        left: 50%;
+        margin: -100px 0 0 -150px;
+        background: red;
+      }
+    </style> %>
   </head>
 
   <body>
     <%= render 'layouts/navigation' %>
+      <% if current_employee %>
+      <hr>
+        <h1>Cart</h1>
+        <% @cart.each do |product| %>
+          <%= product.name %>
+        <% end %>
+        <% if @cart.present? %>
+          <p>
+            <%= button_to "Buy Now!!", checkout_create_path %>
+          </p>
+        <% end %>    
+      <hr>                
+      <% end %>
     <header>
       <% render "layouts/alerts" %>
     </header>

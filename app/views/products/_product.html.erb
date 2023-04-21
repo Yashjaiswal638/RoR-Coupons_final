@@ -1,4 +1,4 @@
-<div id="<%= dom_id product %>">
+<!--  <div id="<%= dom_id product %>">
   <p>
     <strong>Name:</strong>
     <%= product %>
@@ -22,9 +22,7 @@
     <% end %>
   </p>
 
-  <p>
-    <%= button_to "Buy Now!!", checkout_create_path, remote: true %>
-  </p>
+
 
   <%# <script async
     src="https://js.stripe.com/v3/buy-button.js">
@@ -36,4 +34,34 @@
   >
   </stripe-buy-button> %>
 
+</div> -->
+
+
+<div id="<%= dom_id product %>" class="columns mt-6 is-centered">
+    <div class="column is-one-quarter">
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title", style="background-color:#DBF9FC"><%= product %></p>
+        </header>
+        <div class="card-content">
+          <div class="content">
+            <p>Name : <span class="has-text-weight-bold"><%= product %></span></p>
+            <p>Amount : <span class="has-text-weight-bold"><%= product.price %></span></p>
+            <p>Sold : <span class="has-text-weight-bold"><%= product.count %></span></p>
+            <p class="italic">Sent <%= time_ago_in_words (product.created_at) %> ago</p>
+          </div>
+        </div>
+
+        <div class="card-footer">
+          <%= link_to "Show", product, class: "card-footer-item" %>
+          <% if !!current_employee %>
+            <% if @cart.include?(product) %>
+              <%= button_to "Remove from cart", remove_from_cart_path(product), method: :delete, class:"card-footer-item" %>
+            <% else %>
+              <%= button_to "Add to cart", add_to_cart_path(product), class:"card-footer-item button is-primary" %>
+            <% end %>            
+          <% end %>
+        </div>
+      </div>
+    </div>
 </div>

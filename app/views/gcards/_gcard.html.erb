@@ -1,22 +1,27 @@
-<div id="<%= dom_id gcard %>">
-  <p>
-    <strong>Code:</strong>
-    <%= gcard.code %>
-  </p>
 
-  <p>
-    <strong>Amount:</strong>
-    <%= gcard.amount %>
-  </p>
 
-  <p>
-    <strong>Email:</strong>
-    <%= gcard.email %>
-  </p>
+<div class="columns mt-6 is-centered">
+    <div class="column is-one-quarter">
+      <div class="card">
+        <header class="card-header">
+          <p class="card-header-title", style="background-color:#DBF9FC"><%= gcard.email[0..10] %></p>
+        </header>
+        <div class="card-content">
+          <div class="content">
+            <p>Code : <span class="has-text-weight-bold"><%= gcard.code[0..10] %></span></p>
+            <p>Amount : <span class="has-text-weight-bold"><%= gcard.amount %></span></p>
+            <p>Receipient : <span class="has-text-weight-bold"><%= gcard.email %></span></p>
+            <p>Description : <span class="has-text-weight-bold"> <%= gcard.description %></span></p>
+            <p class="italic">Sent <%= time_ago_in_words (gcard.created_at) %> ago</p>
+          </div>
+        </div>
 
-  <p>
-    <strong>Description:</strong>
-    <%= gcard.description %>
-  </p>
-
+        <div class="card-footer">
+          <%= link_to "Show", gcard, class: "card-footer-item" %>
+          <% if !!current_employee %>
+            <%= link_to "Redeem this gcard", gcard_redeem_path(gcard), class: "card-footer-item" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
 </div>

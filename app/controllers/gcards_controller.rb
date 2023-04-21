@@ -1,6 +1,6 @@
 class GcardsController < ApplicationController
   require 'securerandom'
-  before_action :set_gcard, only: %i[ show edit update destroy redeem ]
+  before_action :set_gcard, only: %i[ show edit update destroy ]
 
   # GET /gcards or /gcards.json
   def index
@@ -13,6 +13,15 @@ class GcardsController < ApplicationController
 
   # Redeem Gift Card
   def redeem
+    if current_employee.amount == nil
+      current_employee.amount = 0
+    end
+    @gcard = Gcard.find(params[:gcard_id])
+    current_employee.amount += @gcard.amount
+    @gcard.amount = 0
+    @gcard.save
+    current_employee.save
+    redirect_to @gcard
   end
 
   # GET /gcards/new
