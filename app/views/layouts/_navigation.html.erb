@@ -159,6 +159,13 @@
 
             <% end %>
 
+            <% if current_admin %>
+              <a class="navbar-item">
+                      <%= button_to "Sign out - Admin", destroy_admin_session_path, method: :delete, class:"button is-primary" %>
+              </a>
+
+            <% end %>
+
             <hr class="navbar-divider">
             <a class="navbar-item">
               Report an issue

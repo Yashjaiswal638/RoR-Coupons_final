@@ -47,8 +47,7 @@
           <div class="content">
             <p>Name : <span class="has-text-weight-bold"><%= product %></span></p>
             <p>Amount : <span class="has-text-weight-bold"><%= product.price %></span></p>
-            <p>Sold : <span class="has-text-weight-bold"><%= product.count %></span></p>
-            <p class="italic">Sent <%= time_ago_in_words (product.created_at) %> ago</p>
+            <p class="italic">Launched : <%= time_ago_in_words (product.created_at) %> ago</p>
           </div>
         </div>
 

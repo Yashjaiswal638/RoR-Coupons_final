@@ -1,6 +1,6 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show edit update destroy ]
-  before_action :authenticate_employee!
+  before_action :authenticate_admin!, only: [:new, :create, :destroy]  
   before_action :initialize_session
   before_action :load_cart
 

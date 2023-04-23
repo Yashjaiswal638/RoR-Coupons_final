@@ -1,0 +1,278 @@
+Started GET "/products" for 127.0.0.1 at 2023-04-23 17:18:14 +0530
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:6
+  Rendered products/_product.html.erb (Duration: 2.2ms | Allocations: 1158)
+  Rendered products/_product.html.erb (Duration: 0.5ms | Allocations: 355)
+  Rendered products/_product.html.erb (Duration: 0.4ms | Allocations: 355)
+  Rendered products/index.html.erb within layouts/application (Duration: 9.4ms | Allocations: 4819)
+  Rendered layouts/_navigation.html.erb (Duration: 1.1ms | Allocations: 1308)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered layout layouts/application.html.erb (Duration: 30.5ms | Allocations: 20613)
+Completed 200 OK in 41ms (Views: 34.8ms | ActiveRecord: 1.0ms | Allocations: 22548)
+
+
+Started GET "/admins/sign_in" for 127.0.0.1 at 2023-04-23 17:19:19 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.9.2/app/views/devise/shared/_links.html.erb (Duration: 1.5ms | Allocations: 648)
+  Rendered C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 15.6ms | Allocations: 2447)
+  Rendered layouts/_navigation.html.erb (Duration: 2.5ms | Allocations: 2642)
+  Rendered layouts/_alerts.html.erb (Duration: 0.7ms | Allocations: 223)
+  Rendered layout layouts/application.html.erb (Duration: 26.5ms | Allocations: 8427)
+Completed 200 OK in 42ms (Views: 37.4ms | ActiveRecord: 0.4ms | Allocations: 12603)
+
+
+Started POST "/admins/sign_in" for 127.0.0.1 at 2023-04-23 17:19:27 +0530
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 446)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.9.2/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 131)
+  Rendered C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1221)
+  Rendered layouts/_navigation.html.erb (Duration: 1.1ms | Allocations: 1316)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 22)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 4962)
+Completed 200 OK in 181ms (Views: 8.8ms | ActiveRecord: 0.0ms | Allocations: 5611)
+
+
+Started POST "/admins/sign_in" for 127.0.0.1 at 2023-04-23 17:19:31 +0530
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 355)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.9.2/app/views/devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 131)
+  Rendered C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1213)
+  Rendered layouts/_navigation.html.erb (Duration: 1.1ms | Allocations: 1315)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 7.9ms | Allocations: 4952)
+Completed 200 OK in 185ms (Views: 8.7ms | ActiveRecord: 0.0ms | Allocations: 5533)
+
+
+Started POST "/admins/sign_in" for 127.0.0.1 at 2023-04-23 17:19:37 +0530
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 364)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.9.2/app/views/devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 131)
+  Rendered C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1213)
+  Rendered layouts/_navigation.html.erb (Duration: 1.1ms | Allocations: 1315)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 4952)
+Completed 200 OK in 186ms (Views: 9.5ms | ActiveRecord: 0.0ms | Allocations: 5533)
+
+
+Started POST "/admins/sign_in" for 127.0.0.1 at 2023-04-23 17:19:42 +0530
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 361)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.9.2/app/views/devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 131)
+  Rendered C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1213)
+  Rendered layouts/_navigation.html.erb (Duration: 0.9ms | Allocations: 1315)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 4955)
+Completed 200 OK in 185ms (Views: 8.9ms | ActiveRecord: 0.0ms | Allocations: 5536)
+
+
+Started POST "/admins/sign_in" for 127.0.0.1 at 2023-04-23 17:19:48 +0530
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 352)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.9.2/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 131)
+  Rendered C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1213)
+  Rendered layouts/_navigation.html.erb (Duration: 1.1ms | Allocations: 1315)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 8.3ms | Allocations: 4952)
+Completed 200 OK in 184ms (Views: 9.0ms | ActiveRecord: 0.0ms | Allocations: 5533)
+
+
+Started POST "/admins/sign_in" for 127.0.0.1 at 2023-04-23 17:19:55 +0530
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms | Allocations: 361)
+
+
+Processing by Devise::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.9.2/app/views/devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 131)
+  Rendered C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1213)
+  Rendered layouts/_navigation.html.erb (Duration: 1.2ms | Allocations: 1315)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 4952)
+Completed 200 OK in 181ms (Views: 9.1ms | ActiveRecord: 0.0ms | Allocations: 5533)
+
+
+Started GET "/admins/password/new" for 127.0.0.1 at 2023-04-23 17:19:57 +0530
+Processing by Devise::PasswordsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.9.2/app/views/devise/passwords/new.html.erb within layouts/application
+  Rendered C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.9.2/app/views/devise/shared/_error_messages.html.erb (Duration: 0.6ms | Allocations: 210)
+  Rendered C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.9.2/app/views/devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 145)
+  Rendered C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.9.2/app/views/devise/passwords/new.html.erb within layouts/application (Duration: 15.5ms | Allocations: 1591)
+  Rendered layouts/_navigation.html.erb (Duration: 1.0ms | Allocations: 1341)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 35)
+  Rendered layout layouts/application.html.erb (Duration: 22.3ms | Allocations: 5572)
+Completed 200 OK in 32ms (Views: 26.0ms | ActiveRecord: 0.0ms | Allocations: 7021)
+
+
+Started GET "/admins/sign_up" for 127.0.0.1 at 2023-04-23 17:20:03 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.9.2/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.9.2/app/views/devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 18)
+  Rendered C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.9.2/app/views/devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 90)
+  Rendered C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.9.2/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1791)
+  Rendered layouts/_navigation.html.erb (Duration: 0.9ms | Allocations: 1341)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 35)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 5771)
+Completed 200 OK in 18ms (Views: 15.4ms | ActiveRecord: 0.0ms | Allocations: 7239)
+
+
+Started POST "/admins" for 127.0.0.1 at 2023-04-23 17:20:16 +0530
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"admin2@admin.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "admin2@admin.com"], ["LIMIT", 1]]
+  [1m[36mAdmin Create (0.8ms)[0m  [1m[32mINSERT INTO "admins" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "admin2@admin.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-04-23 11:50:16.796077"], ["updated_at", "2023-04-23 11:50:16.796077"]]
+  [1m[36mTRANSACTION (1.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 195ms (ActiveRecord: 2.9ms | Allocations: 6710)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-23 17:20:16 +0530
+Processing by PagesController#home as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.5ms | Allocations: 121)
+  Rendered layouts/_navigation.html.erb (Duration: 6.6ms | Allocations: 1672)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 42)
+  Rendered layout layouts/application.html.erb (Duration: 12.7ms | Allocations: 4559)
+Completed 200 OK in 19ms (Views: 16.6ms | ActiveRecord: 0.0ms | Allocations: 5789)
+
+
+Started GET "/products" for 127.0.0.1 at 2023-04-23 17:20:18 +0530
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:6
+  Rendered products/_product.html.erb (Duration: 1.8ms | Allocations: 1107)
+  Rendered products/_product.html.erb (Duration: 0.4ms | Allocations: 355)
+  Rendered products/_product.html.erb (Duration: 0.5ms | Allocations: 355)
+  Rendered products/index.html.erb within layouts/application (Duration: 14.4ms | Allocations: 3086)
+  Rendered layouts/_navigation.html.erb (Duration: 1.1ms | Allocations: 1503)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 17)
+  Rendered layout layouts/application.html.erb (Duration: 21.5ms | Allocations: 7235)
+Completed 200 OK in 29ms (Views: 26.1ms | ActiveRecord: 0.2ms | Allocations: 8227)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2023-04-23 17:20:21 +0530
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 1.8ms | Allocations: 1258)
+  Rendered products/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 1543)
+  Rendered layouts/_navigation.html.erb (Duration: 1.1ms | Allocations: 1515)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 5507)
+Completed 200 OK in 14ms (Views: 10.8ms | ActiveRecord: 0.0ms | Allocations: 6176)
+
+
+Started DELETE "/admins/sign_out" for 127.0.0.1 at 2023-04-23 17:20:24 +0530
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 3ms (ActiveRecord: 0.0ms | Allocations: 696)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-23 17:20:24 +0530
+Processing by PagesController#home as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layouts/_navigation.html.erb (Duration: 1.2ms | Allocations: 1307)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 30)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 3787)
+Completed 200 OK in 9ms (Views: 7.0ms | ActiveRecord: 0.0ms | Allocations: 4288)
+
+
+Started GET "/products" for 127.0.0.1 at 2023-04-23 17:20:25 +0530
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:6
+  Rendered products/_product.html.erb (Duration: 0.8ms | Allocations: 408)
+  Rendered products/_product.html.erb (Duration: 0.4ms | Allocations: 355)
+  Rendered products/_product.html.erb (Duration: 0.3ms | Allocations: 355)
+  Rendered products/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 1918)
+  Rendered layouts/_navigation.html.erb (Duration: 1.0ms | Allocations: 1248)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered layout layouts/application.html.erb (Duration: 9.7ms | Allocations: 5601)
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 0.1ms | Allocations: 6079)
+
+
+Started GET "/products" for 127.0.0.1 at 2023-04-23 17:21:03 +0530
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:6
+  Rendered products/_product.html.erb (Duration: 22.1ms | Allocations: 1107)
+  Rendered products/_product.html.erb (Duration: 0.5ms | Allocations: 355)
+  Rendered products/_product.html.erb (Duration: 0.7ms | Allocations: 355)
+  Rendered products/index.html.erb within layouts/application (Duration: 27.1ms | Allocations: 3022)
+  Rendered layouts/_navigation.html.erb (Duration: 3.0ms | Allocations: 2584)
+  Rendered layouts/_alerts.html.erb (Duration: 0.7ms | Allocations: 205)
+  Rendered layout layouts/application.html.erb (Duration: 39.4ms | Allocations: 8947)
+Completed 200 OK in 47ms (Views: 44.3ms | ActiveRecord: 0.2ms | Allocations: 9995)
+
+
+Started GET "/products" for 127.0.0.1 at 2023-04-23 17:21:10 +0530
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:6
+  Rendered products/_product.html.erb (Duration: 25.2ms | Allocations: 1090)
+  Rendered products/_product.html.erb (Duration: 0.6ms | Allocations: 352)
+  Rendered products/_product.html.erb (Duration: 0.4ms | Allocations: 352)
+  Rendered products/index.html.erb within layouts/application (Duration: 30.1ms | Allocations: 2999)
+  Rendered layouts/_navigation.html.erb (Duration: 2.9ms | Allocations: 2584)
+  Rendered layouts/_alerts.html.erb (Duration: 0.7ms | Allocations: 205)
+  Rendered layout layouts/application.html.erb (Duration: 42.8ms | Allocations: 8922)
+Completed 200 OK in 51ms (Views: 47.7ms | ActiveRecord: 0.2ms | Allocations: 10053)
+
+
