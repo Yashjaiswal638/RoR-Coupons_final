@@ -74,3 +74,6 @@ end
 gem "devise"
 
 gem 'stripe'
+
+gem 'aws-sdk-ses'
+

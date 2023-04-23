@@ -30,17 +30,17 @@
   <body>
     <%= render 'layouts/navigation' %>
       <% if current_employee %>
-      <hr>
-        <h1>Cart</h1>
-        <% @cart.each do |product| %>
-          <%= product.name %>
-        <% end %>
-        <% if @cart.present? %>
-          <p>
-            <%= button_to "Buy Now!!", checkout_create_path %>
-          </p>
-        <% end %>    
-      <hr>                
+        <hr>
+          <h1>Cart</h1>
+          <% @cart.each do |product| %>
+            <%= product.name %>
+          <% end %>
+          <% if @cart.present? %>
+            <p>
+              <%= button_to "Buy Now!!", checkout_create_path %>
+            </p>
+          <% end %>    
+        <hr>                
       <% end %>
     <header>
       <% render "layouts/alerts" %>

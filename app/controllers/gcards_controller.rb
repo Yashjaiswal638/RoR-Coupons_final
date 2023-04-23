@@ -51,6 +51,7 @@ class GcardsController < ApplicationController
         if current_user.amount >= @gcard.amount
           current_user.amount = current_user.amount - @gcard.amount
           current_user.save
+          AwsMailer.with(user: emp).welcome_email.deliver_later
           format.html { redirect_to gcard_url(@gcard), notice: "Gcard was successfully created." }
           format.json { render :show, status: :created, location: @gcard }
           # flash.alert = "Article was created successfully."
