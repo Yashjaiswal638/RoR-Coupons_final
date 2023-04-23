@@ -5,9 +5,11 @@
   <p><span class="has-text-weight-bold">Gift cards</span></p><br>
 </div>
 
-<div class="columns mt-6 is-centered">
-  <p><span class="has-text-weight-bold"><%= link_to "Create gift card", new_gcard_path %></span></p>
-</div>
+<% if !!current_user %>
+  <div class="columns mt-6 is-centered">
+    <p><span class="has-text-weight-bold"><%= link_to "Create gift card", new_gcard_path %></span></p>
+  </div>
+<% end %>
 
 
 <% if !!current_user %>
