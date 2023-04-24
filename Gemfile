@@ -77,3 +77,5 @@ gem 'stripe'
 
 gem 'aws-sdk-ses'
 
+
+gem "ransack", "~> 4.0"

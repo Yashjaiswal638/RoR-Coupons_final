@@ -510,3 +510,725 @@ Processing by Rails::MailersController#index as HTML
 Completed 200 OK in 9ms (Views: 4.4ms | Allocations: 1402)
 
 
+Started GET "/" for 127.0.0.1 at 2023-04-24 10:12:09 +0530
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 17.0ms | Allocations: 487)
+  Rendered layouts/_navigation.html.erb (Duration: 6.0ms | Allocations: 3003)
+  Rendered layouts/_alerts.html.erb (Duration: 2.5ms | Allocations: 243)
+  Rendered layout layouts/application.html.erb (Duration: 336.1ms | Allocations: 41202)
+Completed 200 OK in 499ms (Views: 378.5ms | ActiveRecord: 0.4ms | Allocations: 48147)
+
+
+Started GET "/admins" for 127.0.0.1 at 2023-04-24 10:12:18 +0530
+  
+ActionController::RoutingError (No route matches [GET] "/admins"):
+  
+Started GET "/admins/sign_in" for 127.0.0.1 at 2023-04-24 10:12:34 +0530
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application
+  Rendered C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.9.2/app/views/devise/shared/_links.html.erb (Duration: 4.2ms | Allocations: 717)
+  Rendered C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.9.2/app/views/devise/sessions/new.html.erb within layouts/application (Duration: 177.5ms | Allocations: 7772)
+  Rendered layouts/_navigation.html.erb (Duration: 1.1ms | Allocations: 1374)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 35)
+  Rendered layout layouts/application.html.erb (Duration: 196.7ms | Allocations: 11791)
+Completed 200 OK in 241ms (Views: 207.1ms | ActiveRecord: 0.6ms | Allocations: 19661)
+
+
+Started GET "/admins/sign_up" for 127.0.0.1 at 2023-04-24 10:12:59 +0530
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.9.2/app/views/devise/registrations/new.html.erb within layouts/application
+  Rendered C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.9.2/app/views/devise/shared/_error_messages.html.erb (Duration: 3.1ms | Allocations: 217)
+  Rendered C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.9.2/app/views/devise/shared/_links.html.erb (Duration: 0.5ms | Allocations: 143)
+  Rendered C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.9.2/app/views/devise/registrations/new.html.erb within layouts/application (Duration: 11.5ms | Allocations: 2204)
+  Rendered layouts/_navigation.html.erb (Duration: 1.1ms | Allocations: 1372)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 35)
+  Rendered layout layouts/application.html.erb (Duration: 29.8ms | Allocations: 6217)
+Completed 200 OK in 41ms (Views: 38.4ms | ActiveRecord: 0.0ms | Allocations: 7721)
+
+
+Started POST "/admins" for 127.0.0.1 at 2023-04-24 10:13:13 +0530
+Processing by Devise::RegistrationsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "admin"=>{"email"=>"admin2@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mAdmin Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "admins" WHERE "admins"."email" = ? LIMIT ?[0m  [["email", "admin2@gmail.com"], ["LIMIT", 1]]
+  [1m[36mAdmin Create (1.5ms)[0m  [1m[32mINSERT INTO "admins" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["email", "admin2@gmail.com"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["created_at", "2023-04-24 04:43:14.027901"], ["updated_at", "2023-04-24 04:43:14.027901"]]
+  [1m[36mTRANSACTION (4.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 379ms (ActiveRecord: 6.5ms | Allocations: 10778)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-24 10:13:14 +0530
+Processing by PagesController#home as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.0ms | Allocations: 9)
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navigation.html.erb:162
+  Rendered layouts/_navigation.html.erb (Duration: 3.4ms | Allocations: 2582)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 33)
+  Rendered layout layouts/application.html.erb (Duration: 22.1ms | Allocations: 5245)
+Completed 200 OK in 25ms (Views: 22.7ms | ActiveRecord: 0.2ms | Allocations: 5881)
+
+
+Started GET "/products" for 127.0.0.1 at 2023-04-24 10:13:15 +0530
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:6
+  Rendered products/_product.html.erb (Duration: 5.0ms | Allocations: 1260)
+  Rendered products/_product.html.erb (Duration: 0.5ms | Allocations: 352)
+  Rendered products/_product.html.erb (Duration: 0.4ms | Allocations: 352)
+  [1m[36mAdmin Load (0.2ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:12
+  Rendered products/index.html.erb within layouts/application (Duration: 29.9ms | Allocations: 7440)
+  Rendered layouts/_navigation.html.erb (Duration: 1.2ms | Allocations: 1503)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 18)
+  Rendered layout layouts/application.html.erb (Duration: 47.8ms | Allocations: 11580)
+Completed 200 OK in 54ms (Views: 51.1ms | ActiveRecord: 0.6ms | Allocations: 12785)
+
+
+Started GET "/products/new" for 127.0.0.1 at 2023-04-24 10:13:18 +0530
+Processing by ProductsController#new as HTML
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 19.5ms | Allocations: 1685)
+  Rendered products/new.html.erb within layouts/application (Duration: 24.0ms | Allocations: 1987)
+  Rendered layouts/_navigation.html.erb (Duration: 0.9ms | Allocations: 1545)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 30)
+  Rendered layout layouts/application.html.erb (Duration: 43.7ms | Allocations: 6118)
+Completed 200 OK in 49ms (Views: 44.6ms | ActiveRecord: 0.1ms | Allocations: 7925)
+
+
+Started DELETE "/admins/sign_out" for 127.0.0.1 at 2023-04-24 10:37:05 +0530
+Processing by Devise::SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mAdmin Load (0.1ms)[0m  [1m[34mSELECT "admins".* FROM "admins" WHERE "admins"."id" = ? ORDER BY "admins"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 111ms (ActiveRecord: 0.5ms | Allocations: 8418)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-24 10:37:05 +0530
+Processing by PagesController#home as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.0ms | Allocations: 9)
+  Rendered layouts/_navigation.html.erb (Duration: 1.5ms | Allocations: 1368)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 31)
+  Rendered layout layouts/application.html.erb (Duration: 17.8ms | Allocations: 3998)
+Completed 200 OK in 21ms (Views: 18.8ms | ActiveRecord: 0.0ms | Allocations: 4600)
+
+
+Started GET "/employees/sign_in" for 127.0.0.1 at 2023-04-24 10:42:44 +0530
+Processing by Employees::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/sessions/new.html.erb within layouts/application
+  Rendered C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.9.2/app/views/devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 247)
+  Rendered employees/sessions/new.html.erb within layouts/application (Duration: 9.7ms | Allocations: 3337)
+  Rendered layouts/_navigation.html.erb (Duration: 1.2ms | Allocations: 1372)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 35)
+  Rendered layout layouts/application.html.erb (Duration: 27.2ms | Allocations: 7349)
+Completed 200 OK in 42ms (Views: 32.7ms | ActiveRecord: 0.9ms | Allocations: 12858)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-24 10:42:51 +0530
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layouts/_navigation.html.erb (Duration: 1.0ms | Allocations: 1348)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 20.1ms | Allocations: 3800)
+Completed 200 OK in 23ms (Views: 20.9ms | ActiveRecord: 0.0ms | Allocations: 4360)
+
+
+Started GET "/employees/sign_in" for 127.0.0.1 at 2023-04-24 10:48:33 +0530
+Processing by Employees::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/sessions/new.html.erb within layouts/application
+  Rendered C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.9.2/app/views/devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 131)
+  Rendered employees/sessions/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 2243)
+  Rendered layouts/_navigation.html.erb (Duration: 0.9ms | Allocations: 1308)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 24.2ms | Allocations: 5988)
+Completed 200 OK in 28ms (Views: 25.1ms | Allocations: 6739)
+
+
+Started POST "/employees/sign_in" for 127.0.0.1 at 2023-04-24 10:48:39 +0530
+Processing by Employees::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"email"=>"hello@rails.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."email" = ? ORDER BY "employees"."id" ASC LIMIT ?[0m  [["email", "hello@rails.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 276ms (ActiveRecord: 0.8ms | Allocations: 8899)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-24 10:48:40 +0530
+Processing by PagesController#home as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.0ms | Allocations: 9)
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? ORDER BY "employees"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navigation.html.erb:35
+  Rendered layouts/_navigation.html.erb (Duration: 5.2ms | Allocations: 1968)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 30)
+  Rendered layout layouts/application.html.erb (Duration: 23.6ms | Allocations: 4575)
+Completed 200 OK in 26ms (Views: 24.3ms | ActiveRecord: 0.2ms | Allocations: 5157)
+
+
+Started GET "/employees/sign_in" for 127.0.0.1 at 2023-04-24 10:48:42 +0530
+Processing by Employees::SessionsController#new as HTML
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? ORDER BY "employees"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms | Allocations: 1518)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-24 10:48:42 +0530
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? ORDER BY "employees"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navigation.html.erb:35
+  Rendered layouts/_navigation.html.erb (Duration: 3.1ms | Allocations: 1871)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 32)
+  Rendered layout layouts/application.html.erb (Duration: 22.5ms | Allocations: 4310)
+Completed 200 OK in 25ms (Views: 23.1ms | ActiveRecord: 0.2ms | Allocations: 4844)
+
+
+Started DELETE "/employees/sign_out" for 127.0.0.1 at 2023-04-24 10:48:54 +0530
+Processing by Employees::SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? ORDER BY "employees"."id" ASC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 5ms (ActiveRecord: 0.2ms | Allocations: 2103)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-24 10:48:54 +0530
+Processing by PagesController#home as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layouts/_navigation.html.erb (Duration: 1.0ms | Allocations: 1343)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 20.1ms | Allocations: 3816)
+Completed 200 OK in 24ms (Views: 21.3ms | ActiveRecord: 0.0ms | Allocations: 4327)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2023-04-24 10:59:53 +0530
+Processing by Users::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.9.2/app/views/devise/shared/_links.html.erb (Duration: 1.2ms | Allocations: 250)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 10.1ms | Allocations: 2079)
+  Rendered layouts/_navigation.html.erb (Duration: 1.7ms | Allocations: 1372)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 35)
+  Rendered layout layouts/application.html.erb (Duration: 32.8ms | Allocations: 6100)
+Completed 200 OK in 54ms (Views: 40.6ms | ActiveRecord: 1.2ms | Allocations: 10562)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2023-04-24 11:00:03 +0530
+Processing by Users::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"test@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "test@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 217ms (ActiveRecord: 0.2ms | Allocations: 3135)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-24 11:00:04 +0530
+Processing by PagesController#home as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navigation.html.erb:35
+  Rendered layouts/_navigation.html.erb (Duration: 2.9ms | Allocations: 1874)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 30)
+  Rendered layout layouts/application.html.erb (Duration: 22.6ms | Allocations: 4344)
+Completed 200 OK in 25ms (Views: 23.2ms | ActiveRecord: 0.2ms | Allocations: 4848)
+
+
+Started GET "/gcards" for 127.0.0.1 at 2023-04-24 11:00:05 +0530
+Processing by GcardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gcards/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/gcards/index.html.erb:8
+  [1m[36mGcard Load (0.2ms)[0m  [1m[34mSELECT "gcards".* FROM "gcards" WHERE "gcards"."user_id" = ?[0m  [["user_id", 1]]
+  ↳ app/views/gcards/index.html.erb:17
+  Rendered gcards/_gcard.html.erb (Duration: 5.8ms | Allocations: 672)
+  Rendered gcards/_gcard.html.erb (Duration: 1.5ms | Allocations: 172)
+  Rendered gcards/_gcard.html.erb (Duration: 0.4ms | Allocations: 172)
+  Rendered gcards/_gcard.html.erb (Duration: 0.9ms | Allocations: 173)
+  Rendered gcards/_gcard.html.erb (Duration: 0.2ms | Allocations: 173)
+  Rendered gcards/_gcard.html.erb (Duration: 0.2ms | Allocations: 173)
+  Rendered gcards/_gcard.html.erb (Duration: 0.2ms | Allocations: 178)
+  Rendered gcards/_gcard.html.erb (Duration: 0.2ms | Allocations: 172)
+  Rendered gcards/_gcard.html.erb (Duration: 0.2ms | Allocations: 172)
+  Rendered gcards/_gcard.html.erb (Duration: 0.2ms | Allocations: 172)
+  Rendered gcards/index.html.erb within layouts/application (Duration: 162.2ms | Allocations: 16070)
+  Rendered layouts/_navigation.html.erb (Duration: 1.2ms | Allocations: 1052)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 18)
+  Rendered layout layouts/application.html.erb (Duration: 186.5ms | Allocations: 19800)
+Completed 200 OK in 241ms (Views: 190.0ms | ActiveRecord: 1.3ms | Allocations: 22811)
+
+
+Started GET "/gcards/new" for 127.0.0.1 at 2023-04-24 11:00:14 +0530
+Processing by GcardsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gcards/new.html.erb within layouts/application
+  Rendered gcards/_form.html.erb (Duration: 8.7ms | Allocations: 1715)
+  Rendered gcards/new.html.erb within layouts/application (Duration: 13.9ms | Allocations: 2005)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navigation.html.erb:35
+  Rendered layouts/_navigation.html.erb (Duration: 2.8ms | Allocations: 1912)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 34.7ms | Allocations: 6368)
+Completed 200 OK in 38ms (Views: 35.5ms | ActiveRecord: 0.2ms | Allocations: 7033)
+
+
+Started POST "/gcards" for 127.0.0.1 at 2023-04-24 11:00:44 +0530
+Processing by GcardsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "gcard"=>{"amount"=>"100", "email"=>"yjaiswal4268@gmail.com", "description"=>"test"}, "commit"=>"Create Gcard"}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."email" = ? LIMIT ?[0m  [["email", "yjaiswal4268@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/gcards_controller.rb:40:in `create'
+  [1m[36mCACHE Employee Load (0.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."email" = ? LIMIT ?[0m  [["email", "yjaiswal4268@gmail.com"], ["LIMIT", 1]]
+  ↳ app/controllers/gcards_controller.rb:44:in `create'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gcards_controller.rb:46:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/gcards_controller.rb:50:in `block in create'
+  [1m[36mGcard Create (1.3ms)[0m  [1m[32mINSERT INTO "gcards" ("code", "amount", "email", "description", "created_at", "updated_at", "user_id", "employee_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["code", "YgpfSDQiWwdY6NqEyxLqScHO2OTRSSWGuVzoKY8PLwE2qY1APD"], ["amount", 100], ["email", "yjaiswal4268@gmail.com"], ["description", "test"], ["created_at", "2023-04-24 05:30:45.000199"], ["updated_at", "2023-04-24 05:30:45.000199"], ["user_id", 1], ["employee_id", 5]]
+  ↳ app/controllers/gcards_controller.rb:50:in `block in create'
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/gcards_controller.rb:50:in `block in create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/gcards_controller.rb:53:in `block in create'
+  [1m[36mUser Update (2.4ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "amount" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2023-04-24 05:30:45.011288"], ["amount", 400], ["id", 1]]
+  ↳ app/controllers/gcards_controller.rb:53:in `block in create'
+  [1m[36mTRANSACTION (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/gcards_controller.rb:53:in `block in create'
+[ActiveJob] Enqueued ActionMailer::MailDeliveryJob (Job ID: 1ad23a15-8fd1-4afc-881f-7cf966232c7e) to Async(default) with arguments: "AwsMailer", "welcome_email", "deliver_now", {:params=>{:user=>#<GlobalID:0x0000021086943728 @uri=#<URI::GID gid://coupons/Employee/5>>}, :args=>[]}
+Redirected to http://127.0.0.1:3000/gcards/11
+Completed 302 Found in 278ms (ActiveRecord: 10.5ms | Allocations: 26201)
+
+
+Started GET "/gcards/11" for 127.0.0.1 at 2023-04-24 11:00:45 +0530
+[ActiveJob] [ActionMailer::MailDeliveryJob] [1ad23a15-8fd1-4afc-881f-7cf966232c7e]   [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+[ActiveJob] [ActionMailer::MailDeliveryJob] [1ad23a15-8fd1-4afc-881f-7cf966232c7e] Performing ActionMailer::MailDeliveryJob (Job ID: 1ad23a15-8fd1-4afc-881f-7cf966232c7e) from Async(default) enqueued at 2023-04-24T05:30:45Z with arguments: "AwsMailer", "welcome_email", "deliver_now", {:params=>{:user=>#<GlobalID:0x0000021086a3d1b0 @uri=#<URI::GID gid://coupons/Employee/5>>}, :args=>[]}
+[ActiveJob] [ActionMailer::MailDeliveryJob] [1ad23a15-8fd1-4afc-881f-7cf966232c7e] AwsMailer#welcome_email: processed outbound mail in 0.5ms
+[ActiveJob] [ActionMailer::MailDeliveryJob] [1ad23a15-8fd1-4afc-881f-7cf966232c7e] Error performing ActionMailer::MailDeliveryJob (Job ID: 1ad23a15-8fd1-4afc-881f-7cf966232c7e) from Async(default) in 27.64ms: RuntimeError (Invalid delivery method :ses):
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/actionmailer-7.0.4.3/lib/action_mailer/delivery_methods.rb:67:in `wrap_delivery_behavior'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/actionmailer-7.0.4.3/lib/action_mailer/delivery_methods.rb:79:in `wrap_delivery_behavior!'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/actionmailer-7.0.4.3/lib/action_mailer/base.rb:870:in `mail'
+C:/Users/yash.jaiswal_oncehub/Desktop/Coupons/RoR-Coupons_final/app/mailers/aws_mailer.rb:6:in `welcome_email'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/actionpack-7.0.4.3/lib/abstract_controller/base.rb:215:in `process_action'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/actionpack-7.0.4.3/lib/abstract_controller/callbacks.rb:234:in `block in process_action'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4.3/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/actiontext-7.0.4.3/lib/action_text/rendering.rb:20:in `with_renderer'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/actiontext-7.0.4.3/lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4.3/lib/active_support/callbacks.rb:127:in `instance_exec'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4.3/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4.3/lib/active_support/callbacks.rb:138:in `run_callbacks'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/actionpack-7.0.4.3/lib/abstract_controller/callbacks.rb:233:in `process_action'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/actionpack-7.0.4.3/lib/abstract_controller/base.rb:151:in `process'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/actionmailer-7.0.4.3/lib/action_mailer/rescuable.rb:25:in `block in process'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/actionmailer-7.0.4.3/lib/action_mailer/rescuable.rb:17:in `handle_exceptions'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/actionmailer-7.0.4.3/lib/action_mailer/rescuable.rb:24:in `process'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/actionview-7.0.4.3/lib/action_view/rendering.rb:39:in `process'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/actionmailer-7.0.4.3/lib/action_mailer/base.rb:646:in `block in process'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4.3/lib/active_support/notifications.rb:206:in `block in instrument'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4.3/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4.3/lib/active_support/notifications.rb:206:in `instrument'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/actionmailer-7.0.4.3/lib/action_mailer/base.rb:645:in `process'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/actionmailer-7.0.4.3/lib/action_mailer/parameterized.rb:136:in `block in processed_mailer'
+<internal:kernel>:90:in `tap'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/actionmailer-7.0.4.3/lib/action_mailer/parameterized.rb:134:in `processed_mailer'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/actionmailer-7.0.4.3/lib/action_mailer/message_delivery.rb:118:in `deliver_now'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/actionmailer-7.0.4.3/lib/action_mailer/mail_delivery_job.rb:23:in `perform'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/activejob-7.0.4.3/lib/active_job/execution.rb:59:in `block in _perform_job'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4.3/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/i18n-1.12.0/lib/i18n.rb:322:in `with_locale'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/activejob-7.0.4.3/lib/active_job/translation.rb:9:in `block (2 levels) in <module:Translation>'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4.3/lib/active_support/callbacks.rb:127:in `instance_exec'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4.3/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4.3/lib/active_support/core_ext/time/zones.rb:66:in `use_zone'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/activejob-7.0.4.3/lib/active_job/timezones.rb:9:in `block (2 levels) in <module:Timezones>'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4.3/lib/active_support/callbacks.rb:127:in `instance_exec'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4.3/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4.3/lib/active_support/callbacks.rb:138:in `run_callbacks'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/activejob-7.0.4.3/lib/active_job/execution.rb:58:in `_perform_job'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/activejob-7.0.4.3/lib/active_job/instrumentation.rb:20:in `_perform_job'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/activejob-7.0.4.3/lib/active_job/execution.rb:46:in `perform_now'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/activejob-7.0.4.3/lib/active_job/instrumentation.rb:14:in `block in perform_now'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/activejob-7.0.4.3/lib/active_job/instrumentation.rb:25:in `block in instrument'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4.3/lib/active_support/notifications.rb:206:in `block in instrument'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4.3/lib/active_support/notifications/instrumenter.rb:24:in `instrument'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4.3/lib/active_support/notifications.rb:206:in `instrument'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/activejob-7.0.4.3/lib/active_job/instrumentation.rb:35:in `instrument'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/activejob-7.0.4.3/lib/active_job/instrumentation.rb:14:in `perform_now'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/activejob-7.0.4.3/lib/active_job/logging.rb:18:in `block in perform_now'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4.3/lib/active_support/tagged_logging.rb:99:in `block in tagged'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4.3/lib/active_support/tagged_logging.rb:37:in `tagged'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4.3/lib/active_support/tagged_logging.rb:99:in `tagged'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/activejob-7.0.4.3/lib/active_job/logging.rb:25:in `tag_logger'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/activejob-7.0.4.3/lib/active_job/logging.rb:18:in `perform_now'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/activejob-7.0.4.3/lib/active_job/execution.rb:24:in `block in execute'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4.3/lib/active_support/callbacks.rb:118:in `block in run_callbacks'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/activejob-7.0.4.3/lib/active_job/railtie.rb:54:in `block (4 levels) in <class:Railtie>'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4.3/lib/active_support/execution_wrapper.rb:92:in `wrap'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4.3/lib/active_support/reloader.rb:72:in `block in wrap'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4.3/lib/active_support/execution_wrapper.rb:92:in `wrap'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4.3/lib/active_support/reloader.rb:71:in `wrap'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/activejob-7.0.4.3/lib/active_job/railtie.rb:53:in `block (3 levels) in <class:Railtie>'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4.3/lib/active_support/callbacks.rb:127:in `instance_exec'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4.3/lib/active_support/callbacks.rb:127:in `block in run_callbacks'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/activesupport-7.0.4.3/lib/active_support/callbacks.rb:138:in `run_callbacks'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/activejob-7.0.4.3/lib/active_job/execution.rb:22:in `execute'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/activejob-7.0.4.3/lib/active_job/queue_adapters/async_adapter.rb:70:in `perform'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/concurrent-ruby-1.2.2/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:352:in `run_task'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/concurrent-ruby-1.2.2/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:343:in `block (3 levels) in create_worker'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/concurrent-ruby-1.2.2/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `loop'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/concurrent-ruby-1.2.2/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `block (2 levels) in create_worker'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/concurrent-ruby-1.2.2/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `catch'
+C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/concurrent-ruby-1.2.2/lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `block in create_worker'
+Processing by GcardsController#show as TURBO_STREAM
+  Parameters: {"id"=>"11"}
+  [1m[36mGcard Load (0.3ms)[0m  [1m[34mSELECT "gcards".* FROM "gcards" WHERE "gcards"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/gcards_controller.rb:102:in `set_gcard'
+  Rendering layout layouts/application.html.erb
+  Rendering gcards/show.html.erb within layouts/application
+  Rendered gcards/_gcard.html.erb (Duration: 0.7ms | Allocations: 334)
+  Rendered gcards/show.html.erb within layouts/application (Duration: 5.7ms | Allocations: 604)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navigation.html.erb:35
+  Rendered layouts/_navigation.html.erb (Duration: 2.5ms | Allocations: 1780)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 18)
+  Rendered layout layouts/application.html.erb (Duration: 26.9ms | Allocations: 4951)
+Completed 200 OK in 34ms (Views: 27.5ms | ActiveRecord: 0.5ms | Allocations: 6833)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2023-04-24 11:01:14 +0530
+Processing by Users::SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 5ms (ActiveRecord: 0.2ms | Allocations: 1969)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-24 11:01:14 +0530
+Processing by PagesController#home as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layouts/_navigation.html.erb (Duration: 1.0ms | Allocations: 1343)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 29)
+  Rendered layout layouts/application.html.erb (Duration: 19.1ms | Allocations: 3812)
+Completed 200 OK in 23ms (Views: 20.6ms | ActiveRecord: 0.0ms | Allocations: 4323)
+
+
+Started GET "/employees/sign_in" for 127.0.0.1 at 2023-04-24 11:01:20 +0530
+Processing by Employees::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering employees/sessions/new.html.erb within layouts/application
+  Rendered C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.9.2/app/views/devise/shared/_links.html.erb (Duration: 0.3ms | Allocations: 131)
+  Rendered employees/sessions/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 2282)
+  Rendered layouts/_navigation.html.erb (Duration: 0.9ms | Allocations: 1308)
+  Rendered layouts/_alerts.html.erb (Duration: 0.2ms | Allocations: 24)
+  Rendered layout layouts/application.html.erb (Duration: 22.8ms | Allocations: 6033)
+Completed 200 OK in 27ms (Views: 23.7ms | ActiveRecord: 0.0ms | Allocations: 6750)
+
+
+Started POST "/employees/sign_in" for 127.0.0.1 at 2023-04-24 11:01:25 +0530
+Processing by Employees::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"email"=>"yjaiswal4268@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."email" = ? ORDER BY "employees"."id" ASC LIMIT ?[0m  [["email", "yjaiswal4268@gmail.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 195ms (ActiveRecord: 0.2ms | Allocations: 1581)
+
+
+Processing by Employees::SessionsController#new as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"email"=>"yjaiswal4268@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering layout layouts/application.html.erb
+  Rendering employees/sessions/new.html.erb within layouts/application
+  Rendered C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.9.2/app/views/devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 131)
+  Rendered employees/sessions/new.html.erb within layouts/application (Duration: 2.5ms | Allocations: 2246)
+  Rendered layouts/_navigation.html.erb (Duration: 2.5ms | Allocations: 1211)
+  Rendered layouts/_alerts.html.erb (Duration: 0.1ms | Allocations: 21)
+  Rendered layout layouts/application.html.erb (Duration: 22.4ms | Allocations: 5880)
+Completed 200 OK in 213ms (Views: 23.5ms | ActiveRecord: 0.0ms | Allocations: 6504)
+
+
+Started POST "/employees/sign_in" for 127.0.0.1 at 2023-04-24 11:01:30 +0530
+Processing by Employees::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "employee"=>{"email"=>"yjaiswal4268@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."email" = ? ORDER BY "employees"."id" ASC LIMIT ?[0m  [["email", "yjaiswal4268@gmail.com"], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 198ms (ActiveRecord: 0.1ms | Allocations: 2414)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-24 11:01:30 +0530
+Processing by PagesController#home as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? ORDER BY "employees"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navigation.html.erb:35
+  Rendered layouts/_navigation.html.erb (Duration: 3.3ms | Allocations: 1919)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 28)
+  Rendered layout layouts/application.html.erb (Duration: 20.2ms | Allocations: 4374)
+Completed 200 OK in 23ms (Views: 20.8ms | ActiveRecord: 0.3ms | Allocations: 4874)
+
+
+Started GET "/gcards" for 127.0.0.1 at 2023-04-24 11:01:43 +0530
+Processing by GcardsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering gcards/index.html.erb within layouts/application
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? ORDER BY "employees"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gcards/index.html.erb:23
+  [1m[36mGcard Load (0.2ms)[0m  [1m[34mSELECT "gcards".* FROM "gcards" WHERE "gcards"."employee_id" = ?[0m  [["employee_id", 5]]
+  ↳ app/views/gcards/index.html.erb:25
+  Rendered gcards/_gcard.html.erb (Duration: 0.4ms | Allocations: 208)
+  Rendered gcards/_gcard.html.erb (Duration: 7.8ms | Allocations: 193)
+  Rendered gcards/_gcard.html.erb (Duration: 0.3ms | Allocations: 193)
+  Rendered gcards/_gcard.html.erb (Duration: 0.2ms | Allocations: 191)
+  Rendered gcards/index.html.erb within layouts/application (Duration: 14.4ms | Allocations: 3999)
+  Rendered layouts/_navigation.html.erb (Duration: 0.8ms | Allocations: 1079)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered layout layouts/application.html.erb (Duration: 35.9ms | Allocations: 7508)
+Completed 200 OK in 39ms (Views: 36.3ms | ActiveRecord: 0.3ms | Allocations: 8029)
+
+
+Started GET "/gcards/11/redeem" for 127.0.0.1 at 2023-04-24 11:01:52 +0530
+Processing by GcardsController#redeem as HTML
+  Parameters: {"gcard_id"=>"11"}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? ORDER BY "employees"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/gcards_controller.rb:16:in `redeem'
+  [1m[36mGcard Load (0.1ms)[0m  [1m[34mSELECT "gcards".* FROM "gcards" WHERE "gcards"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/gcards_controller.rb:19:in `redeem'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/gcards_controller.rb:22:in `redeem'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/gcards_controller.rb:22:in `redeem'
+  [1m[36mEmployee Load (0.0ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/gcards_controller.rb:22:in `redeem'
+  [1m[36mGcard Update (5.9ms)[0m  [1m[33mUPDATE "gcards" SET "amount" = ?, "updated_at" = ? WHERE "gcards"."id" = ?[0m  [["amount", 0], ["updated_at", "2023-04-24 05:31:52.290995"], ["id", 11]]
+  ↳ app/controllers/gcards_controller.rb:22:in `redeem'
+  [1m[36mTRANSACTION (3.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/gcards_controller.rb:22:in `redeem'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/gcards_controller.rb:23:in `redeem'
+  [1m[36mEmployee Update (1.1ms)[0m  [1m[33mUPDATE "employees" SET "updated_at" = ?, "amount" = ? WHERE "employees"."id" = ?[0m  [["updated_at", "2023-04-24 05:31:52.304550"], ["amount", 100], ["id", 5]]
+  ↳ app/controllers/gcards_controller.rb:23:in `redeem'
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/gcards_controller.rb:23:in `redeem'
+Redirected to http://127.0.0.1:3000/gcards/11
+Completed 302 Found in 34ms (ActiveRecord: 14.1ms | Allocations: 8977)
+
+
+Started GET "/gcards/11" for 127.0.0.1 at 2023-04-24 11:01:52 +0530
+Processing by GcardsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mGcard Load (0.1ms)[0m  [1m[34mSELECT "gcards".* FROM "gcards" WHERE "gcards"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/gcards_controller.rb:102:in `set_gcard'
+  Rendering layout layouts/application.html.erb
+  Rendering gcards/show.html.erb within layouts/application
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? ORDER BY "employees"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/gcards/_gcard.html.erb:21
+  Rendered gcards/_gcard.html.erb (Duration: 3.2ms | Allocations: 954)
+  Rendered gcards/show.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1041)
+  Rendered layouts/_navigation.html.erb (Duration: 0.8ms | Allocations: 1114)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered layout layouts/application.html.erb (Duration: 23.3ms | Allocations: 4577)
+Completed 200 OK in 27ms (Views: 24.0ms | ActiveRecord: 0.3ms | Allocations: 5552)
+
+
+Started GET "/products" for 127.0.0.1 at 2023-04-24 11:02:23 +0530
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:6
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? ORDER BY "employees"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:56
+  Rendered products/_product.html.erb (Duration: 2.4ms | Allocations: 1282)
+  Rendered products/_product.html.erb (Duration: 0.5ms | Allocations: 511)
+  Rendered products/_product.html.erb (Duration: 0.4ms | Allocations: 511)
+  Rendered products/index.html.erb within layouts/application (Duration: 6.3ms | Allocations: 3183)
+  Rendered layouts/_navigation.html.erb (Duration: 0.9ms | Allocations: 1081)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered layout layouts/application.html.erb (Duration: 26.5ms | Allocations: 6679)
+Completed 200 OK in 30ms (Views: 27.1ms | ActiveRecord: 0.3ms | Allocations: 7196)
+
+
+Started POST "/products/add_to_cart/1" for 127.0.0.1 at 2023-04-24 11:02:57 +0530
+Processing by ProductsController#add_to_cart as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"1"}
+Redirected to http://127.0.0.1:3000/products
+Completed 302 Found in 6ms (ActiveRecord: 0.0ms | Allocations: 458)
+
+
+Started GET "/products" for 127.0.0.1 at 2023-04-24 11:02:57 +0530
+Processing by ProductsController#index as TURBO_STREAM
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `load_cart'
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:6
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? ORDER BY "employees"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:56
+  Rendered products/_product.html.erb (Duration: 2.1ms | Allocations: 1383)
+  Rendered products/_product.html.erb (Duration: 0.4ms | Allocations: 511)
+  Rendered products/_product.html.erb (Duration: 0.5ms | Allocations: 511)
+  Rendered products/index.html.erb within layouts/application (Duration: 5.5ms | Allocations: 3260)
+  Rendered layouts/_navigation.html.erb (Duration: 0.7ms | Allocations: 1071)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered layout layouts/application.html.erb (Duration: 24.8ms | Allocations: 6918)
+Completed 200 OK in 29ms (Views: 25.3ms | ActiveRecord: 0.5ms | Allocations: 8095)
+
+
+Started POST "/products/add_to_cart/2" for 127.0.0.1 at 2023-04-24 11:03:00 +0530
+Processing by ProductsController#add_to_cart as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"2"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:12:in `load_cart'
+Redirected to http://127.0.0.1:3000/products
+Completed 302 Found in 4ms (ActiveRecord: 0.1ms | Allocations: 1024)
+
+
+Started GET "/products" for 127.0.0.1 at 2023-04-24 11:03:00 +0530
+Processing by ProductsController#index as TURBO_STREAM
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/application_controller.rb:12:in `load_cart'
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.7ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:6
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? ORDER BY "employees"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:56
+  Rendered products/_product.html.erb (Duration: 4.1ms | Allocations: 1375)
+  Rendered products/_product.html.erb (Duration: 0.5ms | Allocations: 607)
+  Rendered products/_product.html.erb (Duration: 0.6ms | Allocations: 511)
+  Rendered products/index.html.erb within layouts/application (Duration: 10.0ms | Allocations: 3348)
+  Rendered layouts/_navigation.html.erb (Duration: 0.8ms | Allocations: 1071)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 14)
+  Rendered layout layouts/application.html.erb (Duration: 32.1ms | Allocations: 7004)
+Completed 200 OK in 38ms (Views: 32.1ms | ActiveRecord: 1.9ms | Allocations: 8227)
+
+
+Started POST "/products/add_to_cart/3" for 127.0.0.1 at 2023-04-24 11:03:02 +0530
+Processing by ProductsController#add_to_cart as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"3"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" IN (?, ?)[0m  [["id", 1], ["id", 2]]
+  ↳ app/controllers/application_controller.rb:12:in `load_cart'
+Redirected to http://127.0.0.1:3000/products
+Completed 302 Found in 6ms (ActiveRecord: 0.3ms | Allocations: 1067)
+
+
+Started GET "/products" for 127.0.0.1 at 2023-04-24 11:03:02 +0530
+Processing by ProductsController#index as TURBO_STREAM
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" IN (?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 3]]
+  ↳ app/controllers/application_controller.rb:12:in `load_cart'
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products"[0m
+  ↳ app/views/products/index.html.erb:6
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? ORDER BY "employees"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/products/_product.html.erb:56
+  Rendered products/_product.html.erb (Duration: 2.5ms | Allocations: 1375)
+  Rendered products/_product.html.erb (Duration: 0.8ms | Allocations: 607)
+  Rendered products/_product.html.erb (Duration: 0.5ms | Allocations: 607)
+  Rendered products/index.html.erb within layouts/application (Duration: 6.4ms | Allocations: 3444)
+  Rendered layouts/_navigation.html.erb (Duration: 2.1ms | Allocations: 1071)
+  Rendered layouts/_alerts.html.erb (Duration: 0.3ms | Allocations: 14)
+  Rendered layout layouts/application.html.erb (Duration: 30.0ms | Allocations: 7117)
+Completed 200 OK in 35ms (Views: 30.2ms | ActiveRecord: 0.8ms | Allocations: 8321)
+
+
+Started POST "/checkout/create" for 127.0.0.1 at 2023-04-24 11:03:05 +0530
+Processing by CheckoutController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" IN (?, ?, ?)[0m  [["id", 1], ["id", 2], ["id", 3]]
+  ↳ app/controllers/application_controller.rb:12:in `load_cart'
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? ORDER BY "employees"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/checkout_controller.rb:4:in `create'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/checkout_controller.rb:8:in `block in create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/checkout_controller.rb:9:in `block in create'
+  [1m[36mEmployee Update (1.5ms)[0m  [1m[33mUPDATE "employees" SET "updated_at" = ?, "amount" = ? WHERE "employees"."id" = ?[0m  [["updated_at", "2023-04-24 05:33:05.211009"], ["amount", 0], ["id", 5]]
+  ↳ app/controllers/checkout_controller.rb:9:in `block in create'
+  [1m[36mTRANSACTION (3.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/checkout_controller.rb:9:in `block in create'
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/checkout_controller.rb:8:in `block in create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/checkout_controller.rb:9:in `block in create'
+  [1m[36mEmployee Update (1.4ms)[0m  [1m[33mUPDATE "employees" SET "amount" = ?, "updated_at" = ? WHERE "employees"."id" = ?[0m  [["amount", -100], ["updated_at", "2023-04-24 05:33:05.220872"], ["id", 5]]
+  ↳ app/controllers/checkout_controller.rb:9:in `block in create'
+  [1m[36mTRANSACTION (3.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/checkout_controller.rb:9:in `block in create'
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/checkout_controller.rb:8:in `block in create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/checkout_controller.rb:9:in `block in create'
+  [1m[36mEmployee Update (1.6ms)[0m  [1m[33mUPDATE "employees" SET "amount" = ?, "updated_at" = ? WHERE "employees"."id" = ?[0m  [["amount", -200], ["updated_at", "2023-04-24 05:33:05.230491"], ["id", 5]]
+  ↳ app/controllers/checkout_controller.rb:9:in `block in create'
+  [1m[36mTRANSACTION (2.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/checkout_controller.rb:9:in `block in create'
+Redirected to http://127.0.0.1:3000/success
+Completed 302 Found in 36ms (ActiveRecord: 15.3ms | Allocations: 9645)
+
+
+Started GET "/success" for 127.0.0.1 at 2023-04-24 11:03:05 +0530
+Processing by CheckoutController#success as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering checkout/success.html.erb within layouts/application
+  Rendered checkout/success.html.erb within layouts/application (Duration: 2.9ms | Allocations: 127)
+  [1m[36mEmployee Load (0.3ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? ORDER BY "employees"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navigation.html.erb:35
+  Rendered layouts/_navigation.html.erb (Duration: 5.0ms | Allocations: 2123)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 35)
+  Rendered layout layouts/application.html.erb (Duration: 27.6ms | Allocations: 4947)
+Completed 200 OK in 35ms (Views: 31.5ms | ActiveRecord: 0.3ms | Allocations: 5950)
+
+
+Started GET "/employees/edit" for 127.0.0.1 at 2023-04-24 11:03:58 +0530
+Processing by Employees::RegistrationsController#edit as HTML
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? ORDER BY "employees"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering employees/registrations/edit.html.erb within layouts/application
+  Rendered C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.9.2/app/views/devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 18)
+  Rendered C:/Ruby31-x64/lib/ruby/gems/3.1.0/gems/devise-4.9.2/app/views/devise/shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 11)
+  Rendered employees/registrations/edit.html.erb within layouts/application (Duration: 14.9ms | Allocations: 5236)
+  Rendered layouts/_navigation.html.erb (Duration: 0.8ms | Allocations: 1174)
+  Rendered layouts/_alerts.html.erb (Duration: 0.0ms | Allocations: 35)
+  Rendered layout layouts/application.html.erb (Duration: 35.6ms | Allocations: 9056)
+Completed 200 OK in 46ms (Views: 42.2ms | ActiveRecord: 0.2ms | Allocations: 11609)
+
+
+Started DELETE "/employees/sign_out" for 127.0.0.1 at 2023-04-24 11:04:04 +0530
+Processing by Employees::SessionsController#destroy as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]"}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? ORDER BY "employees"."id" ASC LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+Redirected to http://127.0.0.1:3000/
+Completed 303 See Other in 5ms (ActiveRecord: 0.2ms | Allocations: 2121)
+
+
+Started GET "/" for 127.0.0.1 at 2023-04-24 11:04:04 +0530
+Processing by PagesController#home as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  Rendered layouts/_navigation.html.erb (Duration: 1.0ms | Allocations: 1343)
+  Rendered layouts/_alerts.html.erb (Duration: 0.2ms | Allocations: 30)
+  Rendered layout layouts/application.html.erb (Duration: 18.4ms | Allocations: 3813)
+Completed 200 OK in 21ms (Views: 19.2ms | ActiveRecord: 0.0ms | Allocations: 4337)
+
+
